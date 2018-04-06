@@ -1,9 +1,10 @@
-apiVersion: v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: hello-machine-deployment
   labels:
     app: hello-machine
+    version: "0.2"
 spec:
   replicas: 3
   selector:
