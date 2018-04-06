@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-machine
+spec:
+  replicas: 3
+  selector:
+    app: hello-machine
+  template:
+    metadata:
+      name: hello-machine
+      labels:
+        app: hello-machine
+    spec:
+      containers:
+      - name: hello-machine
+        image: nycdavid/hello-machine-id
+        ports:
+        - containerPort: 3000
